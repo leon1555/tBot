@@ -3,12 +3,13 @@ const session = require('express-session')
 const path = require('path')
 const pg = require('pg')
 const bcrypt = require('bcrypt')
+const ttrack_password = require('../../ttrack_password/ttrack_password')
 
 const pool = new pg.Pool({
     user: 'tbot',
     host: 'localhost',
     database: 'ttrack',
-    password: 'tbot',
+    password: ttrack_password,
     port: 5432
 })
 
