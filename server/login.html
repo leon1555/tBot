@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Document</title>
+    <script type="text/javascript">
+        function main(){
+            let btn = document.querySelector("#submit_button");
+            let message_area = document.querySelector("#message_area")
+            btn.addEventListener('click', async function(){
+                let data = {};
+                let username_element = document.querySelector("input[name='username']")
+                let password_element = document.querySelector("input[name='password']")
+                let role_selector_element = document.querySelector("select[name='role']");
+                data['username'] = username_element.value;
+                data["password"] = password_element.value;
+                let response = await fetch("/login", {
+                    method: 'POST',
+                    headers:{
+                        'Content-Type' : 'application/json'
+                    },
+                    body:JSON.stringify(data)
+                })
+
+                let response_text = await response.text()
+                message_area.innerText = response_text;
+            })
+        }
+
+        window.addEventListener('load', main);
+    </script>
+</head>
+<body>
+    <div class="login-form corners">
+    <form method="POST" action='/login'>
+        <input type='text' name='username' placeholder='username'/>
+        <input type='password' name='password' placeholder='password'/>
+        <button id="submit_button" type='button'>Log in!</button>
+    </form>
+    <output id="message_area"></output>
+    </div>
+</body>
+</html>

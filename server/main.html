@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tBot Main</title>
+    <link rel="stylesheet" href="tbot_main.css">
+</head>
+<body>
+    <div id="container">
+    <div id="top_container">
+        <!-- <img src="tbotlogo.png" id="logo"> -->
+        <div class="date" id="date_day"></div>
+        <div class="date" id="date_num"></div>
+        <div class="date" id="date_month"></div>
+        <div class="date" id="date_year"></div>
+    </div>
+    <h1 id="insert_username"></h1>
+    <div id="med_container">
+        <div id="medication_output"></div>
+        <div id="dosage_output"></div>
+        <div id="last_injection_output"></div>
+        <div id="next_injection_output"></div>
+    </div>
+    <div id="new_regime_link">
+        <button type="button" class="main_buttons" id="new_regime_button" onClick="location.href='tbot_new_plan.html'">+</button>
+        <label for="new_regime_button" id="new_regime_text">new injection regime</label>
+    </div>
+    <div id="log_injection_link">
+        <button type="button" id="log_button" class="main_buttons" onClick="location.href='tbot_log_new.html'">+</button>
+        <label for="new_regime_button" id="log_button_text">new injection</label><br>
+    </div>
+
+    <a id="forecaster" class="button" href="tbot_forecaster.html">view upcoming injections</a>
+    <a id="med_details" class="button" href="tbot_med_details.html">view medication details</a>
+
+    <script type="module" src="tbot_main.js"></script>
+</body>
+</html>

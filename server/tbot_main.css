@@ -1,0 +1,219 @@
+#container {
+    /* iPhone 11 Pro / X - 1 */
+    position: relative;
+    width: 375px;
+    height: 812px;
+    margin: auto;
+    padding-bottom: 16px;
+    background: whitesmoke;
+    border: solid 2px black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-family: monospace;
+    font-style: normal;
+    font-weight:300;
+    font-size: 20px;
+    color: rgb(0, 112, 112);
+    display: grid;
+    /* grid-template-rows: 1fr 3fr 2fr; */
+    grid-template-areas:
+        "top_container"
+        "insert_username"
+        "medication"
+        "new_plan"
+        "new_injection"
+        "forecast"
+        "gap"
+        "med_details";
+    grid-gap: 10px;
+
+}
+
+
+
+h1 {
+    text-align:center;
+    font-weight:bold;
+    font-size: 1.4em;
+    line-height: .1em;
+    color: rgb(0, 112, 112);
+}
+
+h2 {
+    text-align:center;
+    color:rgb(0, 112, 112);
+    font-weight: bold;
+}
+
+h3 {
+    font-family:monospace;
+    font-style: normal;
+    font-weight:bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: rgb(0, 112, 112);
+    margin-left: 5px;
+}
+
+h4 {
+    font-family:monospace;
+    font-style: normal;
+    font-weight:bold;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgb(0, 112, 112);
+    margin-left: 5px;
+}
+
+.purple {
+    color: #9E3163;
+}
+
+#top_container {
+    width: 375px;
+    height: 130px;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%),
+    url("tbotbackground.png");
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px 10px 0px 0px;
+    display: grid;
+    grid-template-areas: 
+    "logo . day ."
+     "logo . date ."
+     "logo . month ."
+      "logo . year .";
+}
+
+#logo {
+    margin: 12px;
+    width: 190px;
+    grid-area: logo;
+}
+
+#date_day {
+    grid-area: day;
+}
+
+#date_num {
+    grid-area: date;
+    font-size: 2em;
+    font-weight:bolder;
+}
+
+#date_month {
+    grid-area: month;
+}
+
+#date_year {
+    grid-area: year;
+}
+.date {
+    color: rgb(188, 255, 255);
+    text-align: center;
+}
+
+#insert_username {
+    grid-area: insert_username;
+}
+
+#medication_output {
+    grid-area: medication;
+    display: grid;
+    grid-template-columns: 150px 210px;
+    grid-template-areas: "brand dose";
+    margin: 12px;
+}
+
+#dosage_output {
+    grid-area: dosage;
+    display: grid;
+    grid-template-columns: 150px 210px;
+    grid-template-areas: "label amount";
+    margin: 12px;
+}
+
+#last_injection_output {
+    margin: 12px;
+    grid-area: last_injection;
+}
+
+#next_injection_output {
+    margin: 12px;
+    grid-area: next_injection;
+}
+
+#new_regime_link {
+    margin-left: 24px;
+    grid-area: new_plan;
+    margin-bottom: 12px;
+}
+
+#log_injection_link {
+    margin-left: 24px;
+    grid-area: new_injection;
+}
+
+#forecaster {
+    grid-area: forecast;
+}
+
+#med_details{
+    grid-area: med_details;
+}
+
+.main_buttons {
+    height: 48px;
+    width: 48px;  
+    font-size: 1.5em;
+    border-radius: 100%;
+    background-color: #c55187;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+.main_buttons:hover {
+    background-color:#aa4674;
+}
+
+
+
+.button{
+    background:transparent;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: 18px;
+    margin-right: 18px;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display:inline-block;
+    outline:none;
+    position:relative;
+    top:0;
+    font-family: monospace;
+    text-shadow:0 1px 1px rgba(0, 0, 0, 0.5);
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -ms-transition: all 0.2s ease-in-out 0s;
+     transition: all 0.2s ease-in-out 0s;
+    background:#458C97;
+    color:#fff;
+    box-shadow: 0 3px 0 #2A575E;
+    border-radius:2em;
+}
+
+.button:hover{
+    background:#76C1BC;    
+}
+.button:active, .button:focus{
+    background:#458C97;
+}
+.button.press-me:focus{
+    box-shadow: 0 2px 0 #22303d;
+}
+
+
