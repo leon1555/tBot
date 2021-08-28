@@ -4,6 +4,7 @@ const { getSignUp, postSignUp, getLogIn, postLogIn, postRegister, getMain } = re
 const passport = require('passport')
 
 
+
 // load user model
 const User = require('../../models/User')
 
