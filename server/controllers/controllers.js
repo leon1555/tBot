@@ -1,15 +1,15 @@
 const path = require("path");
 const bcrypt = require("bcrypt");
-const client = require("./db");
+const client = require("../db");
 const gravatar = require("gravatar");
 const bcryptjs = require("bcryptjs");
-const User = require("./models/User");
+const User = require("../models/User");
 const jwt = require("jsonwebtoken");
-const keys = require("./config/keys");
+const keys = require("../config/keys");
 
 // load input validation
-const validateRegisterInput = require('./validation/register')
-const validateLoginInput = require('./validation/login')
+const validateRegisterInput = require('../validation/register')
+const validateLoginInput = require('../validation/login')
 
 // shorthand for MongoDB collection
 const collection = client.db("sprint3").collection("ttrack");

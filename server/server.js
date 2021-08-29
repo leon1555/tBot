@@ -3,8 +3,10 @@ const session = require('express-session')
 const mongoose = require('mongoose')
 const path = require('path')
 const users = require('./routes/api/users')
-const port = process.env.PORT || 5004
-const { getRoot } = require('./controllers')
+const profile = require('./routes/api/profile')
+const injection = require('./routes/api/injection')
+const port = process.env.PORT || 5006
+const { getRoot } = require('./controllers/controllers')
 const passport = require('passport')
 
 
@@ -34,6 +36,8 @@ app.use(
 
 // use routes
 app.use('/api/users', users)
+app.use('/api/profile', profile)
+app.use('/api/injection', injection)
 
 // fetch css
 app.use('/', express.static(path.join(__dirname, 'css')))

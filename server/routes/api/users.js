@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { getSignUp, postSignUp, getLogIn, postLogIn, postRegister, getMain } = require('../../controllers')
+const { getSignUp, postSignUp, getLogIn, postLogIn, postRegister, getMain } = require('../../controllers/controllers')
 const passport = require('passport')
 
 
