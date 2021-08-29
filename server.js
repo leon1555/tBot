@@ -5,7 +5,7 @@ const path = require('path')
 const users = require('./routes/api/users')
 const profile = require('./routes/api/profile')
 const injection = require('./routes/api/injection')
-const port = process.env.PORT || 5006
+const port = process.env.PORT || 5007
 const { getRoot } = require('./controllers/controllers')
 const passport = require('passport')
 
