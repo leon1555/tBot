@@ -26,7 +26,7 @@ router.get(
   (req, res) => {
     const errors = {};
     Profile.findOne({ user: req.user.id })
-      .populate("user", ["name", "avatar"])
+      .populate("user", ["email", "avatar"])
       .then((profile) => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
@@ -47,7 +47,7 @@ router.get(
   (req, res) => {
     const errors = {};
     Profile.findOne({ handle: req.params.handle })
-      .populate("user", ["name", "avatar"])
+      .populate("user", ["email", "avatar"])
       .then((profile) => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
@@ -68,7 +68,7 @@ router.get(
   (req, res) => {
     const errors = {};
     Profile.findOne({ user: req.params.user_id })
-      .populate("user", ["name", "avatar"])
+      .populate("user", ["email", "avatar"])
       .then((profile) => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
