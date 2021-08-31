@@ -1,5 +1,3 @@
-import isEmpty from "../validation/is-empty";
-
 const isEmpty = (value) =>
   value === undefined ||
   value === null ||
