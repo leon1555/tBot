@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { clearCurrentProfile } from "../../actions/profileActions";
+import logo from "../../img/tbotlogo2.png";
+// import styled from "styled-components";
 
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -11,10 +13,14 @@ class Navbar extends Component {
     this.props.clearCurrentProfile();
     this.props.logoutUser();
   }
+
   render() {
+    // const LogOutButton = styled.button`
+    //   background-color: black;
+    // `;
     const { isAuthenticated, user } = this.props.auth;
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav ml-auto antic-font">
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
             Dashboard
@@ -22,7 +28,7 @@ class Navbar extends Component {
         </li>
         <li className="nav-item">
           <a
-            href="#"
+            href=""
             onClick={this.onLogoutClick.bind(this)}
             className="nav-link"
           >
@@ -39,7 +45,7 @@ class Navbar extends Component {
       </ul>
     );
     const guestLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav ml-auto antic-font">
         <li className="nav-item">
           <Link className="nav-link" to="register">
             Sign Up
@@ -55,8 +61,13 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
-          <Link className="navbar-brand" to="/">
-            T Track
+          <Link className="navbar-brand risque-font" to="/">
+            <img
+              src={logo}
+              alt=""
+              style={{ width: "40px", marginRight: "5px" }}
+            />
+            T-Bot
           </Link>
           <button
             className="navbar-toggler"

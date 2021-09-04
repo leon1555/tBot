@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
+import logoName from "../../img/tbotlogo.png";
+import tbotlogobrand from "../../img/tbotlogobrand.png";
 
 class Landing extends Component {
   componentDidMount() {
@@ -17,18 +19,20 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">T Track</h1>
-                <p className="lead">
+                <div>
+                  <img src={tbotlogobrand} alt="" style={{ width: "600px" }} />
+                </div>
+                <p className="lead lead-landing">
                   For transmen, non-binary folk, and cismen who self-inject
                   testosterone
                 </p>
-                <hr />
-                <Link to="register" className="btn btn-lg btn-info mr-2">
+                {/* <hr /> */}
+                {/* <Link to="register" className="btn btn-lg btn-info mr-2">
                   Sign Up
                 </Link>
                 <Link to="login" className="btn btn-lg btn-light">
                   Login
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

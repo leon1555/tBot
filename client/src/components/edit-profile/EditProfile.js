@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
-import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
-import InputGroup from "../common/InputGroup";
+import NumberInputGroup from "../common/NumberInputGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { createProfile, getCurrentProfile } from "../../actions/profileActions";
 import isEmpty from "../../validation/is-empty";
@@ -55,16 +54,14 @@ class CreateProfile extends Component {
       profile.expirydate = !isEmpty(profile.expirydate)
         ? profile.expirydate
         : "";
-      profile.vialvolml = !isEmpty(profile.vialvolml)
-        ? profile.vialvolml
-        : undefined;
+      profile.vialvolml = !isEmpty(profile.vialvolml) ? profile.vialvolml : "";
       profile.vialconcentrationmgml = !isEmpty(profile.vialconcentrationmgml)
         ? profile.vialconcentrationmgml
-        : undefined;
-      profile.dosecc = !isEmpty(profile.dosecc) ? profile.dosecc : undefined;
+        : "";
+      profile.dosecc = !isEmpty(profile.dosecc) ? profile.dosecc : "";
       profile.cyclelengthdays = !isEmpty(profile.cyclelengthdays)
         ? profile.cyclelengthdays
-        : undefined;
+        : "";
       profile.injectionsites = !isEmpty(profile.injectionsites)
         ? profile.injectionsites
         : [];
@@ -151,7 +148,7 @@ class CreateProfile extends Component {
                   error={errors.expirydate}
                   info="The expiry date on your current vial."
                 />
-                <TextFieldGroup
+                <NumberInputGroup
                   placeholder="Total volume of vial"
                   name="vialvolml"
                   value={`${this.state.vialvolml}`}
@@ -159,7 +156,7 @@ class CreateProfile extends Component {
                   error={errors.vialvolml}
                   info="The total volume of your vial in mL."
                 />
-                <TextFieldGroup
+                <NumberInputGroup
                   placeholder="Concentration of your vial"
                   name="vialconcentrationmgml"
                   value={`${this.state.vialconcentrationmgml}`}
@@ -167,7 +164,7 @@ class CreateProfile extends Component {
                   error={errors.vialconcentrationmgml}
                   info="The concentration of hormone in your vial."
                 />
-                <TextFieldGroup
+                <NumberInputGroup
                   placeholder="* Your dosage"
                   name="dosecc"
                   value={`${this.state.dosecc}`}
@@ -175,7 +172,7 @@ class CreateProfile extends Component {
                   error={errors.dosecc}
                   info="Your dose in cc's."
                 />
-                <TextFieldGroup
+                <NumberInputGroup
                   placeholder="* How many days are there between your injections?"
                   name="cyclelengthdays"
                   value={`${this.state.cyclelengthdays}`}

@@ -45,12 +45,12 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="register">
+      <div className="register antic-font">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">Create your T Track account</p>
+              <p className="lead text-center">Create your T Bot account</p>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="Email"
@@ -59,7 +59,6 @@ class Register extends Component {
                   value={this.state.email}
                   onChange={this.onChange}
                   error={errors.email}
-                  info="This site uses Gravatar, so if you want a profile image, use a Gravatar email."
                 />
                 <TextFieldGroup
                   placeholder="Password"

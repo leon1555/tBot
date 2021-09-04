@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
-import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
-import InputGroup from "../common/InputGroup";
+import NumberInputGroup from "../common/NumberInputGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { createProfile } from "../../actions/profileActions";
 
@@ -82,9 +81,6 @@ class CreateProfile extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Create Your Profile</h1>
-              <p className="lead text-center">
-                Let's get some information to make your profile stand out
-              </p>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -96,7 +92,7 @@ class CreateProfile extends Component {
                   info="A unique handle for your profile URL."
                 />
                 <SelectListGroup
-                  placeholder="Drug name"
+                  // placeholder="Drug name"
                   name="drugname"
                   value={this.state.drugname}
                   onChange={this.onChange}
@@ -112,46 +108,39 @@ class CreateProfile extends Component {
                   error={errors.expirydate}
                   info="The expiry date on your current vial."
                 />
-                <TextFieldGroup
-                  placeholder="Total volume of vial"
+                <NumberInputGroup
+                  // placeholder="Total volume of vial"
                   name="vialvolml"
                   value={`${this.state.vialvolml}`}
                   onChange={this.onChange}
                   error={errors.vialvolml}
                   info="The total volume of your vial in mL."
                 />
-                <TextFieldGroup
-                  placeholder="Concentration of your vial"
+                <NumberInputGroup
+                  // placeholder="Concentration of your vial"
                   name="vialconcentrationmgml"
                   value={`${this.state.vialconcentrationmgml}`}
                   onChange={this.onChange}
                   error={errors.vialconcentrationmgml}
                   info="The concentration of hormone in your vial."
                 />
-                <TextFieldGroup
-                  placeholder="* Your dosage"
+                <NumberInputGroup
+                  // placeholder="* Your dosage"
                   name="dosecc"
                   value={`${this.state.dosecc}`}
                   onChange={this.onChange}
                   error={errors.dosecc}
                   info="Your dose in cc's."
                 />
-                <TextFieldGroup
-                  placeholder="* How many days are there between your injections?"
+                <NumberInputGroup
+                  // placeholder="* How many days are there between your injections?"
                   name="cyclelengthdays"
                   value={`${this.state.cyclelengthdays}`}
                   onChange={this.onChange}
                   error={errors.cyclelengthdays}
                   info="Your cycle length in days."
                 />
-                <TextFieldGroup
-                  placeholder="Placeholder for injection sites"
-                  name="injectionsites"
-                  value={this.state.injectionsites}
-                  onChange={this.onChange}
-                  error={errors.injectionsites}
-                  info="[To be changed to selection boxes]"
-                />
+
                 <div className="mb-3">
                   <button
                     type="button"

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Risque&display=swap");
+
 img {
   width: 100%;
 }
@@ -7,7 +10,17 @@ img {
   background: url("./img/tbotbackground.png") no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 85vh;
+  margin-top: -24px;
+  margin-bottom: -50px;
+  font-family: "Antic Slab", serif;
+}
+
+.logo {
+  position: relative;
+  background: url("./img/tbotlogo.png") no-repeat;
+  background-position: center;
+  height: 30vh;
   margin-top: -24px;
   margin-bottom: -50px;
 }
@@ -37,3 +50,19 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+.lead-landing {
+  color: #ccfffc;
+  font-size: 1.3rem;
+}
+
+.antic-font {
+  font-family: "Antic Slab";
+}
+
+.risque-font {
+  font-family: "Risque";
+}
+/* .log-out-btn {
+  background-color: black;
+} */

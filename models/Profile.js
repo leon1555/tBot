@@ -16,65 +16,61 @@ const ProfileSchema = new Schema({
   drugname: {
     type: String,
   },
-  vialinfo: 
-    {
-      vialvolml: {
-        type: Decimal128,
-      },
-      vialconcentrationmgml: {
-        type: Decimal128,
-      },
-      tdosemg: {
-        type: Number,
-      },
-      expirydate: {
-        type: Date,
-      },
-    },
-  doseinfo:
-    {
-      dosecc: {
-        type: Decimal128,
-      },
-      totaldosesvial: {
-        type: Number,
-      },
-      dosesremainingvial: {
-        type: Number,
-      },
-    },
+
+  vialvolml: {
+    type: Number,
+  },
+  vialconcentrationmgml: {
+    type: Number,
+  },
+  tdosemg: {
+    type: Number,
+  },
+  expirydate: {
+    type: Date,
+  },
+
+  dosecc: {
+    type: Number,
+  },
+  totaldosesvial: {
+    type: Number,
+  },
+  dosesremainingvial: {
+    type: Number,
+  },
+
   cyclelengthdays: {
     type: Number,
   },
-  injectionsiteinfo:
-    {
-      injectionsites: {
-        leftarm: {
-            type: Boolean
-        },
-        rightarm: {
-            type: Boolean
-        },
-        leftthigh: {
-            type: Boolean
-        },
-        rightthigh: {
-            type: Boolean
-        },
-        lefthip: {
-            type: Boolean
-        },
-        righthip: {
-            type: Boolean
-        }
-      },
-      lastinjectionsite: {
-        type: String,
-      },
-      nextinjectionsite: {
-        type: String,
-      },
+
+  injectionsites: {
+    leftarm: {
+      type: Boolean,
     },
+    rightarm: {
+      type: Boolean,
+    },
+    leftthigh: {
+      type: Boolean,
+    },
+    rightthigh: {
+      type: Boolean,
+    },
+    lefthip: {
+      type: Boolean,
+    },
+    righthip: {
+      type: Boolean,
+    },
+  },
+  lastinjectionsite: {
+    type: String,
+  },
+  nextinjectionsite: {
+    type: String,
+  },
+
   lastinjectiondate: {
     type: Date,
   },
@@ -83,4 +79,4 @@ const ProfileSchema = new Schema({
   },
 });
 
-module.exports = Profile = mongoose.model('profile', ProfileSchema)
+module.exports = Profile = mongoose.model("profile", ProfileSchema);

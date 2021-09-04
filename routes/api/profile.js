@@ -105,18 +105,13 @@ router.post(
       profileFields.cyclelengthdays = req.body.cyclelengthdays;
 
     // Vial info
-    profileFields.vialinfo = {};
-    if (req.body.vialvolml)
-      profileFields.vialinfo.vialvolml = req.body.vialvolml;
+    if (req.body.vialvolml) profileFields.vialvolml = req.body.vialvolml;
     if (req.body.vialconcentrationmgml)
-      profileFields.vialinfo.vialconcentrationmgml =
-        req.body.vialconcentrationmgml;
-    if (req.body.expirydate)
-      profileFields.vialinfo.expirydate = req.body.expirydate;
+      profileFields.vialconcentrationmgml = req.body.vialconcentrationmgml;
+    if (req.body.expirydate) profileFields.expirydate = req.body.expirydate;
 
     // Dose info
-    profileFields.doseinfo = {};
-    if (req.body.dosecc) profileFields.doseinfo.dosecc = req.body.dosecc;
+    if (req.body.dosecc) profileFields.dosecc = req.body.dosecc;
     Profile.findOne({ user: req.user.id }).then((profile) => {
       if (profile) {
         // Update
@@ -166,7 +161,36 @@ router.post(
         lefthip: req.body.lefthip,
         righthip: req.body.righthip,
       };
-      profile.injectionsiteinfo.injectionsites = newSites;
+      profile.injectionsites = newSites;
+      profile.save().then((profile) => res.json(profile));
+    });
+  }
+);
+
+// @route   POST api/profile/injection
+// @desc    Log an injection
+// @access  Private
+router.post(
+  "/injection",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateInjectionSitesInput(req.body);
+
+    // Check validation
+    if (!isValid) {
+      //Return errors with 400 status
+      return res.status(400).json(errors);
+    }
+    Profile.findOne({ user: req.user.id }).then((profile) => {
+      const newSites = {
+        leftarm: req.body.leftarm,
+        rightarm: req.body.rightarm,
+        leftthigh: req.body.leftthigh,
+        rightthigh: req.body.rightthigh,
+        lefthip: req.body.lefthip,
+        righthip: req.body.righthip,
+      };
+      profile.injectionsites = newSites;
       profile.save().then((profile) => res.json(profile));
     });
   }
