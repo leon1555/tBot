@@ -16,13 +16,13 @@ class CreateProfile extends Component {
       handle: "",
       drugname: "",
       expirydate: "",
-      vialvolml: undefined,
-      vialconcentrationmgml: undefined,
-      dosecc: undefined,
-      tdosemg: undefined,
-      totaldosesvial: undefined,
-      dosesremainingvial: undefined,
-      cyclelengthdays: undefined,
+      vialvolml: "",
+      vialconcentrationmgml: "",
+      dosecc: "",
+      tdosemg: "",
+      totaldosesvial: "",
+      dosesremainingvial: "",
+      cyclelengthdays: "",
       injectionsites: [],
       lastinjectionsite: "",
       nextinjectionsite: "",
@@ -144,7 +144,7 @@ class CreateProfile extends Component {
                   info="Enter the name of the testosterone that you take."
                 />
                 <TextFieldGroup
-                  placeholder="Expiry date on vial"
+                  type="date"
                   name="expirydate"
                   value={this.state.expirydate}
                   onChange={this.onChange}
@@ -154,7 +154,7 @@ class CreateProfile extends Component {
                 <TextFieldGroup
                   placeholder="Total volume of vial"
                   name="vialvolml"
-                  value={this.state.vialvolml}
+                  value={`${this.state.vialvolml}`}
                   onChange={this.onChange}
                   error={errors.vialvolml}
                   info="The total volume of your vial in mL."
@@ -162,7 +162,7 @@ class CreateProfile extends Component {
                 <TextFieldGroup
                   placeholder="Concentration of your vial"
                   name="vialconcentrationmgml"
-                  value={this.state.vialconcentrationmgml}
+                  value={`${this.state.vialconcentrationmgml}`}
                   onChange={this.onChange}
                   error={errors.vialconcentrationmgml}
                   info="The concentration of hormone in your vial."
@@ -170,7 +170,7 @@ class CreateProfile extends Component {
                 <TextFieldGroup
                   placeholder="* Your dosage"
                   name="dosecc"
-                  value={this.state.dosecc}
+                  value={`${this.state.dosecc}`}
                   onChange={this.onChange}
                   error={errors.dosecc}
                   info="Your dose in cc's."
@@ -178,7 +178,7 @@ class CreateProfile extends Component {
                 <TextFieldGroup
                   placeholder="* How many days are there between your injections?"
                   name="cyclelengthdays"
-                  value={this.state.cyclelengthdays}
+                  value={`${this.state.cyclelengthdays}`}
                   onChange={this.onChange}
                   error={errors.cyclelengthdays}
                   info="Your cycle length in days."

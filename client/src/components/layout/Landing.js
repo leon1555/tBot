@@ -18,7 +18,10 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-12 text-center">
                 <h1 className="display-3 mb-4">T Track</h1>
-                <p className="lead"> Keep track of your T injections</p>
+                <p className="lead">
+                  For transmen, non-binary folk, and cismen who self-inject
+                  testosterone
+                </p>
                 <hr />
                 <Link to="register" className="btn btn-lg btn-info mr-2">
                   Sign Up
