@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-dark text-white mt-5 p-4 text-center antic-font">
-      &copy; {new Date().getFullYear()} leon chisholm
+      &copy; {new Date().getFullYear()} Leon Chisholm
     </footer>
   );
 }
