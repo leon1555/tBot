@@ -65,7 +65,7 @@ class Navbar extends Component {
             <img
               src={logo}
               alt=""
-              style={{ width: "40px", marginRight: "5px" }}
+              style={{ width: "50px", marginRight: "5px" }}
             />
             T-Bot
           </Link>

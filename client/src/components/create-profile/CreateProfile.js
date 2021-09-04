@@ -11,7 +11,6 @@ class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      handle: "",
       drugname: "",
       expirydate: "",
       vialvolml: "",
@@ -56,6 +55,7 @@ class CreateProfile extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+    console.log({ [e.target.name]: e.target.value });
   }
 
   render() {
@@ -76,11 +76,11 @@ class CreateProfile extends Component {
       { label: "Aveed (testosterone undecanoate)", value: "Aveed" },
     ];
     return (
-      <div className="create-profile">
+      <div className="create-profile page-light">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Create Your Profile</h1>
+              <h1 className="display-4 text-center">Create a Profile</h1>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -98,7 +98,6 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   options={options}
                   error={errors.drugname}
-                  info="Enter the name of the testosterone that you take."
                 />
                 <TextFieldGroup
                   type="date"
@@ -149,7 +148,7 @@ class CreateProfile extends Component {
                         displayInjectionSites: !prevState.displayInjectionSites,
                       }));
                     }}
-                    className="btn btn-light"
+                    className="btn btn-light col-6"
                   >
                     Add Injection Sites
                   </button>
@@ -159,7 +158,7 @@ class CreateProfile extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn btn-info col-12 mt-4"
                 />
               </form>
             </div>

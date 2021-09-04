@@ -26,10 +26,11 @@ class Dashboard extends Component {
         dashboardContent = (
           <div>
             <p className="lead text-muted">
-              Welcome <Link to={`/profile${profile.handle}`}>{user.email}</Link>
+              Welcome{user.handle}
+              <Link to={`/profile${profile.handle}`}>{user.handle}</Link>
             </p>
             <ProfileActions />
-            {/* TODO: exp and edu */}
+            {/* TODO: profile and injections */}
             <div style={{ marginBottom: "60px" }} />
             <button
               onClick={this.onDeleteClick.bind(this)}
@@ -43,8 +44,7 @@ class Dashboard extends Component {
         // User is logged in but has no profile
         dashboardContent = (
           <div>
-            <p className="lead text-muted">Welcome {user.email}</p>
-            <p> You have not yet set up a profile. Please add some info.</p>
+            <p className="lead text-muted">Welcome {user.handle}</p>
             <Link to="/create-profile" className="btn btn-lg btn-info">
               Create Profile
             </Link>
@@ -53,7 +53,7 @@ class Dashboard extends Component {
       }
     }
     return (
-      <div className="dashboard">
+      <div className="dashboard page-light">
         <div className="container">
           <div className="row">
             <div className="col-md-12">

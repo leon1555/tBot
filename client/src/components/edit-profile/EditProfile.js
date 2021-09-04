@@ -116,7 +116,7 @@ class CreateProfile extends Component {
       { label: "Aveed (testosterone undecanoate)", value: "Aveed" },
     ];
     return (
-      <div className="create-profile">
+      <div className="create-profile page-light">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">

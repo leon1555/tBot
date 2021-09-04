@@ -9,9 +9,9 @@ const SelectListGroup = ({ name, value, error, info, onChange, options }) => {
     </option>
   ));
   return (
-    <div className="form-group">
+    <div className="form-group mb-2">
       <select
-        className={classnames("form-control form-control-lg", {
+        className={classnames("form-control", {
           "is-invalid": error,
         })}
         name={name}

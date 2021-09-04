@@ -5,9 +5,20 @@ img {
   width: 100%;
 }
 
-.landing {
+.page {
   position: relative;
   background: url("./img/tbotbackground.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  margin-top: -24px;
+  margin-bottom: -50px;
+  font-family: "Antic Slab", serif;
+}
+
+.page-light {
+  position: relative;
+  background: url("./img/tbotbackgroundlight.png") no-repeat;
   background-size: cover;
   background-position: center;
   height: 85vh;
@@ -60,8 +71,19 @@ img {
   font-family: "Antic Slab";
 }
 
+.antic-font-light {
+  font-family: "Antic Slab";
+  color: #ccfffc;
+}
+
 .risque-font {
   font-family: "Risque";
+}
+
+.submit-btn {
+  background-color: #94f4ef;
+  font-weight: 100;
+  font-size: 1.3rem;
 }
 /* .log-out-btn {
   background-color: black;

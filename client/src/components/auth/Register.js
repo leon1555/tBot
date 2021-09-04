@@ -35,6 +35,7 @@ class Register extends Component {
   onSubmit(e) {
     e.preventDefault();
     const newUser = {
+      name: this.state.name,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2,
@@ -45,39 +46,52 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="register antic-font">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">Create your T Bot account</p>
-              <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="Email"
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  error={errors.email}
-                />
-                <TextFieldGroup
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  error={errors.password}
-                />
-                <TextFieldGroup
-                  placeholder="Confirm Password"
-                  name="password2"
-                  type="password"
-                  value={this.state.password2}
-                  onChange={this.onChange}
-                  error={errors.password2}
-                />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
+      <div className="register page antic-font-light">
+        <div className="dark-overlay landing-inner antic-font-light">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 m-auto">
+                <h1 className="display-4 text-center">Sign Up</h1>
+                <p className="lead text-center">Create your T Bot account</p>
+                <form onSubmit={this.onSubmit}>
+                  <TextFieldGroup
+                    placeholder="Name or alias"
+                    name="name"
+                    type="text"
+                    value={this.state.handle}
+                    onChange={this.onChange}
+                    error={errors.handle}
+                  />
+                  <TextFieldGroup
+                    placeholder="Email"
+                    name="email"
+                    type="email"
+                    value={this.state.email}
+                    onChange={this.onChange}
+                    error={errors.email}
+                  />
+                  <TextFieldGroup
+                    placeholder="Password"
+                    name="password"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.onChange}
+                    error={errors.password}
+                  />
+                  <TextFieldGroup
+                    placeholder="Confirm password"
+                    name="password2"
+                    type="password"
+                    value={this.state.password2}
+                    onChange={this.onChange}
+                    error={errors.password2}
+                  />
+                  <input
+                    type="submit"
+                    className="btn btn-info submit-btn col-12 mt-4"
+                  />
+                </form>
+              </div>
             </div>
           </div>
         </div>
