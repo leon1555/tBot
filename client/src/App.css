@@ -80,6 +80,11 @@ img {
   font-family: "Risque";
 }
 
+.risque-font-light {
+  font-family: "Risque";
+  color: #ccfffc;
+}
+
 .submit-btn {
   background-color: #94f4ef;
   font-weight: 100;
