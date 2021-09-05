@@ -40,7 +40,7 @@ class AddInjection extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="add-injection">
+      <div className="add-injection page-light">
         <div className="container">
           <div className="rows">
             <div className="col-md-8 m-auto">
@@ -70,7 +70,7 @@ class AddInjection extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn submit-btn col-12 mt-4"
                 />
               </form>
             </div>
@@ -82,12 +82,12 @@ class AddInjection extends Component {
 }
 
 AddInjection.propTypes = {
+  addInjection: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  addInjection: PropTypes.func.isRequired,
   profile: state.profile,
   errors: state.errors,
 });
