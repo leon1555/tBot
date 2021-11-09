@@ -39,7 +39,7 @@ function CreateProfile(props) {
 
   let injectionSites;
   if (displayInjectionSites) {
-    // LEON STILL NEEDS TO MAKE THIS
+    // I STILL NEED TO MAKE THIS
     injectionSites = <div>hello</div>;
   }
   // Select options for status
